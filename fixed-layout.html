@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn tạo Fixed Header và Fixed Footer</title>
+    <style>
+        /* Reset margin mặc định của trình duyệt */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8fafc;
+        }
+
+        /* 1. FIXED HEADER (Thanh điều hướng cố định trên cùng) */
+        .navbar {
+            overflow: hidden;
+            background-color: #333333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Đảm bảo menu luôn nổi lên trên cùng */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 18px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .navbar a:hover {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .navbar a.active {
+            background-color: #04AA6D;
+        }
+
+        /* 2. KHỐI NỘI DUNG CHÍNH (main) */
+        .main {
+            padding: 20px;
+            margin-top: 50px;    /* Chừa khoảng trống để không bị Header che mất chữ */
+            margin-bottom: 50px; /* Chừa khoảng trống để không bị Footer che mất chữ */
+            height: 1600px;      /* Chiều cao lớn để tạo thanh cuộn chuột thử nghiệm */
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main h1 {
+            color: #1e293b;
+        }
+
+        .main h2 {
+            color: #475569;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .content-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            line-height: 1.6;
+            color: #334155;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* 3. FIXED FOOTER (Chân trang cố định dưới cùng) */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #222222;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 14px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FIXED TOP MENU -->
+    <div class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <h1>Fixed Top Menu & Footer Demo</h1>
+        <h2>Scroll this page to see the effect</h2>
+        <h2>The navigation bar will stay at the top and the footer at the bottom while scrolling</h2>
+
+        <div class="content-box">
+            <p><strong>position: fixed</strong> giúp ghim một phần tử cố định so với khung nhìn (viewport) của trình duyệt. Dù bạn cuộn trang lên trên hay xuống dưới bao nhiêu, phần tử này vẫn nằm nguyên tại vị trí được thiết lập bằng <code>top</code> hoặc <code>bottom</code>.</p>
+            <p>Hãy lăn chuột xuống dưới để kiểm tra menu trên cùng và thanh thông báo chân trang luôn đứng yên.</p>
+        </div>
+
+        <div class="content-box" style="margin-top: 250px;">
+            <p>Vị trí giữa trang (cuộn chuột tiếp xuống dưới)...</p>
+        </div>
+
+        <div class="content-box" style="margin-top: 350px;">
+            <p>Vị trí gần cuối trang...</p>
+        </div>
+    </div>
+
+    <!-- FIXED BOTTOM FOOTER -->
+    <div class="footer">
+        &copy; 2026 CodeGym Practice - Fixed Header & Footer Layout
+    </div>
+
+</body>
+</html>
