@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành tạo bố cục cơ bản</title>
+    <style>
+        /* 1. Thiết lập font chữ cho cả trang và reset lề */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e5e7eb;
+            margin: 0;
+            padding: 20px 0;
+            color: #1f2937;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Khung bao bọc toàn bộ bố cục trang và căn giữa */
+        #main {
+            width: 960px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 10px;
+        }
+
+        /* 2. Phần HEAD: Logo và Banner */
+        #head {
+            height: 110px;
+            background-color: #1e3a8a;
+            color: #ffffff;
+            border: 1px solid #172554;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* 3. Phần HEAD-LINK: Menu liên kết ngang đầu trang */
+        #head-link {
+            height: 42px;
+            background-color: #3b82f6;
+            margin-bottom: 10px;
+            border: 1px solid #2563eb;
+            line-height: 42px;
+        }
+
+        #head-link ul {
+            list-style: none;
+            margin: 0;
+            padding: 0 15px;
+            display: flex;
+            gap: 25px;
+        }
+
+        #head-link ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        #head-link ul li a:hover {
+            color: #fef08a;
+        }
+
+        /* Container bao quanh 3 cột (left - content - right) */
+        .middle-wrapper {
+            margin-bottom: 10px;
+        }
+
+        /* Clearfix chống xẹp khung khi 3 cột con dùng float */
+        .middle-wrapper::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* 4. Cột LEFT: Menu danh mục bên trái */
+        #left {
+            width: 190px;
+            min-height: 420px;
+            float: left;
+            background-color: #f0fdf4;
+            border: 1px solid #86efac;
+            padding: 12px;
+            margin-right: 10px;
+        }
+
+        #left h3 {
+            margin-top: 0;
+            color: #166534;
+            border-bottom: 2px solid #bbf7d0;
+            padding-bottom: 6px;
+            font-size: 16px;
+        }
+
+        #left ul {
+            list-style: square;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        #left ul li {
+            margin-bottom: 8px;
+            color: #15803d;
+            font-size: 14px;
+        }
+
+        /* 5. Cột CONTENT: Nội dung chính ở giữa */
+        #content {
+            width: 530px;
+            min-height: 420px;
+            float: left;
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 15px;
+            margin-right: 10px;
+        }
+
+        #content h2 {
+            margin-top: 0;
+            color: #1d4ed8;
+            font-size: 20px;
+        }
+
+        #content p {
+            line-height: 1.6;
+            font-size: 14px;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        /* 6. Cột RIGHT: Thông tin bổ trợ, lịch, biểu đồ */
+        #right {
+            width: 200px;
+            min-height: 420px;
+            float: left;
+            background-color: #fff7ed;
+            border: 1px solid #fed7aa;
+            padding: 12px;
+        }
+
+        #right h3 {
+            margin-top: 0;
+            color: #c2410c;
+            border-bottom: 2px solid #ffedd5;
+            padding-bottom: 6px;
+            font-size: 16px;
+        }
+
+        #right p {
+            font-size: 13px;
+            color: #7c2d12;
+            line-height: 1.5;
+        }
+
+        /* 7. Phân vùng FOOTER: Thông tin cuối trang */
+        #footer {
+            height: 55px;
+            background-color: #1f2937;
+            color: #9ca3af;
+            border: 1px solid #111827;
+            clear: both; /* Đảm bảo footer luôn nằm dưới cùng sau các cột float */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PHÂN VÙNG CHỨA TOÀN BỘ NỘI DUNG (#main) -->
+    <div id="main">
+
+        <!-- 1. HEAD (Banner & Logo) -->
+        <div id="head">
+            WEBSITE BANNER &amp; LOGO
+        </div>
+
+        <!-- 2. HEAD-LINK (Thanh menu ngang đầu trang) -->
+        <div id="head-link">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Students</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- KHỐI CHỨA 3 CỘT NỘI DUNG Ở GIỮA -->
+        <div class="middle-wrapper">
+            <!-- 3. LEFT (Cột bên trái) -->
+            <div id="left">
+                <h3>Liên Kết Trái</h3>
+                <ul>
+                    <li>Tin tức tuyển sinh</li>
+                    <li>Chương trình đào tạo</li>
+                    <li>Hoạt động sinh viên</li>
+                    <li>Học bổng &amp; Việc làm</li>
+                </ul>
+            </div>
+
+            <!-- 4. CONTENT (Nội dung chính) -->
+            <div id="content">
+                <h2>Nội Dung Chính (Hot News &amp; Articles)</h2>
+                <p>
+                    Đây là phân vùng <code>#content</code> chiếm vị trí trung tâm của website. Tại đây trình bày các tin bài nóng, slide hình ảnh, danh sách sự kiện và bài viết chi tiết.
+                </p>
+                <p>
+                    Bố cục 3 cột được tính toán chuẩn xác theo kích thước:
+                    <strong>Left (190px)</strong> + lề 10px + 
+                    <strong>Content (530px)</strong> + lề 10px + 
+                    <strong>Right (200px)</strong> = <strong>940px</strong>, khớp vừa vặn bên trong khung chứa chính <code>#main</code> (960px trừ 20px padding).
+                </p>
+            </div>
+
+            <!-- 5. RIGHT (Cột bên phải) -->
+            <div id="right">
+                <h3>Thông Tin Phụ</h3>
+                <p><strong>Lịch công tác:</strong><br>Họp hội đồng tuần 40.</p>
+                <p><strong>Biểu đồ thống kê:</strong><br>Tiến độ hoàn thành dự án đạt 95%.</p>
+            </div>
+        </div>
+
+        <!-- 6. FOOTER (Chân trang) -->
+        <div id="footer">
+            &copy; 2026 Bản quyền thuộc về Hệ thống Đào tạo Lập trình. All rights reserved.
+        </div>
+
+    </div>
+
+</body>
+</html>
