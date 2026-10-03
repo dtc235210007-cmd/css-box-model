@@ -1,135 +1,77 @@
-/* Thiết lập cơ bản & Reset box-sizing */
+/* Reset căn bản và tính toán padding vào width */
 * {
     box-sizing: border-box;
-}
-
-html {
-    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    padding-top: 75px;   /* Bù trừ chiều cao fixed header để không bị che mất nội dung */
-    min-height: 1500px;  /* Tạo độ dài trang kiểm tra hiệu ứng cuộn */
+    text-align: center;
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding: 30px 15px;
 }
 
-/* 1. HEADER CỐ ĐỊNH (FIXED HEADER) */
-.main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333333;
-    color: #ffffff;
-    padding: 15px 30px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;       /* Luôn nổi lên trên nội dung khi cuộn trang */
+h1 {
+    margin-bottom: 20px;
+    color: #0f172a;
 }
 
-.main-header h1 {
-    margin: 0;
-    font-size: 22px;
+/* Thanh điều hướng */
+nav {
+    margin-bottom: 25px;
+    padding: 12px 0;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.main-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.main-header nav ul li {
-    margin-left: 20px;
-}
-
-.main-header nav ul li a {
-    color: #ffffff;
+nav a {
+    display: inline-block;
+    margin: 0 15px;
     text-decoration: none;
+    color: #334155;
     font-weight: bold;
     font-size: 15px;
-    transition: color 0.2s ease;
+    transition: color 0.2s;
 }
 
-.main-header nav ul li a:hover {
-    color: #38bdf8;
+nav a:hover {
+    color: #2563eb;
 }
 
-/* 2. BỐ CỤC 3 CỘT VỚI FLEXBOX */
-.page-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 20px;
-    gap: 20px;           /* Khoảng cách giữa các cột */
+/* Khu vực 3 cột inline-block */
+section {
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    font-size: 0; /* Khử khoảng cách mặc định (white-space) giữa các khối inline-block */
 }
 
-/* Định dạng chung cho cả 2 Sidebar */
-.sidebar {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-    flex-shrink: 0;      /* Không bị co lại */
+.box {
+    display: inline-block;
+    width: 30%;
+    margin: 1.5%;
+    padding: 35px 20px;
+    background-color: lightblue;
+    color: #0f172a;
+    font-size: 16px; /* Thiết lập lại cỡ chữ cho phần tử con */
+    font-weight: bold;
+    border-radius: 8px;
+    vertical-align: top;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, background-color 0.2s;
 }
 
-.left-sidebar {
-    width: 220px;        /* Chiều rộng cố định cho Sidebar trái */
+.box:hover {
+    background-color: #93c5fd;
+    transform: translateY(-3px);
 }
 
-.right-sidebar {
-    width: 220px;        /* Chiều rộng cố định cho Sidebar phải */
-}
-
-.sidebar h3 {
-    margin-top: 0;
-    color: #1e293b;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 8px;
-    font-size: 17px;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 12px;
-    color: #475569;
-    font-size: 14px;
-}
-
-.right-sidebar p {
+/* Chân trang footer */
+footer {
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
     color: #64748b;
     font-size: 14px;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* Khu vực nội dung chính */
-.main-content {
-    background-color: #ffffff;
-    padding: 25px 30px;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-    flex-grow: 1;        /* Mở rộng chiếm hết phần trống ở giữa */
-}
-
-.main-content h2 {
-    margin-top: 0;
-    color: #0f172a;
-    font-size: 22px;
-}
-
-.main-content p {
-    line-height: 1.7;
-    color: #334155;
-    font-size: 15px;
-    margin-bottom: 18px;
 }
