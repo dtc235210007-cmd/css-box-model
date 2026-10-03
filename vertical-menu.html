@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành tạo Menu dọc Dropdown</title>
+    <style>
+        /* 1. Thiết lập chung tránh khác biệt giữa các trình duyệt */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f8;
+        }
+
+        #menu, #menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* 2. Định dạng các mục chọn li trong danh sách */
+        #menu li {
+            position: relative;          /* Làm gốc tọa độ cho menu con tuyệt đối */
+            width: 120px;
+            height: 35px;
+            padding: 0 20px;
+            background-color: #000000;
+            line-height: 35px;
+            cursor: pointer;
+            border-bottom: 1px solid #333333;
+        }
+
+        /* 3. Định dạng thẻ liên kết a bên trong */
+        #menu li a {
+            text-decoration: none;
+            color: #ffffff;
+            display: block;
+            font-size: 14px;
+        }
+
+        /* 4. Hiệu ứng đổi màu nền khi rê chuột vào mục chọn */
+        #menu li:hover {
+            background-color: #008080;   /* Màu xanh mòng két nổi bật */
+        }
+
+        /* 5. Định dạng menu con (ẩn mặc định) */
+        #menu li ul {
+            position: absolute;
+            top: 0;
+            left: 160px;                 /* Bằng width (120px) + padding trái phải (40px) */
+            visibility: hidden;          /* Mặc định ẩn menu con */
+            opacity: 0;
+            transition: visibility 0.2s, opacity 0.2s linear;
+        }
+
+        /* 6. Hiển thị menu con tương ứng khi di chuột vào mục cha */
+        #menu li:hover > ul {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Menu Dropdown Dọc (Vertical Menu)</h2>
+    <p>Rê chuột vào các mục có mũi tên (>) để xem menu con bung sang bên phải:</p>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Sản phẩm &raquo;</a>
+                <!-- Menu cấp 2 -->
+                <ul>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li>
+                        <a href="#">Phụ kiện &raquo;</a>
+                        <!-- Menu cấp 3 -->
+                        <ul>
+                            <li><a href="#">Chuột</a></li>
+                            <li><a href="#">Bàn phím</a></li>
+                            <li><a href="#">Tai nghe</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Dịch vụ &raquo;</a>
+                <ul>
+                    <li><a href="#">Bảo hành</a></li>
+                    <li><a href="#">Sửa chữa</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
