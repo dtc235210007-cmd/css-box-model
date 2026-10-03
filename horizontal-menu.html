@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành tạo Menu ngang Dropdown</title>
+    <style>
+        /* 1. Thiết lập chung font chữ và reset lề */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px;
+            background-color: #f8fafc;
+        }
+
+        /* 2. Định dạng khung chứa toàn bộ thanh menu ngang */
+        #menu {
+            height: 40px;
+            background-color: #333333;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        #menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* 3. Phần tử li của menu cấp 1: dàn hàng ngang và làm mốc tọa độ */
+        #menu > ul > li {
+            float: left;
+            position: relative; /* Gốc tọa độ cho menu con thả xuống */
+        }
+
+        /* 4. Định dạng các liên kết trong menu */
+        #menu a {
+            display: block;
+            width: 140px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* 5. Đổi màu nền sang đỏ khi rê chuột qua liên kết */
+        #menu a:hover {
+            background-color: #dc2626; /* Màu đỏ nổi bật */
+            color: #ffffff;
+        }
+
+        /* 6. Trình đơn con (menu cấp 2): định vị tuyệt đối và ẩn mặc định */
+        #menu ul ul {
+            position: absolute;
+            top: 40px;                  /* Nằm ngay dưới mép menu cha */
+            left: 0;
+            background-color: #222222;
+            visibility: hidden;         /* Ẩn menu con khi bình thường */
+            opacity: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            z-index: 100;
+        }
+
+        /* Menu con xếp dọc */
+        #menu ul ul li {
+            border-bottom: 1px solid #444444;
+        }
+
+        /* 7. Hiển thị menu con khi di chuột vào mục menu cha tương ứng */
+        #menu li:hover > ul {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Thực Hành Menu Dropdown Ngang (Horizontal Menu)</h2>
+    <p>Rê chuột vào mục <strong>Sản phẩm</strong> hoặc <strong>Khóa học</strong> để quan sát menu con thả xuống:</p>
+
+    <!-- Khối menu chính -->
+    <div id="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Sản phẩm &#9662;</a>
+                <!-- Menu con cấp 2 -->
+                <ul>
+                    <li><a href="#">Máy tính xách tay</a></li>
+                    <li><a href="#">Điện thoại di động</a></li>
+                    <li><a href="#">Phụ kiện gaming</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Khóa học &#9662;</a>
+                <!-- Menu con cấp 2 -->
+                <ul>
+                    <li><a href="#">HTML & CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Lập trình Python</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
