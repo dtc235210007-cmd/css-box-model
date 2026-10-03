@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Overflow trong CSS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f5f9;
+            margin: 40px;
+        }
+
+        h2 {
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        p.guide {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Khối xử lý tràn nội dung bằng overflow: auto */
+        .overflow-box {
+            width: 300px;
+            height: 100px;
+            background-color: lightgray;
+            padding: 10px;
+            overflow: auto; /* Tự động xuất hiện thanh cuộn khi nội dung vượt quá kích thước */
+            border: 2px solid #94a3b8;
+            border-radius: 6px;
+            line-height: 1.5;
+            color: #1e293b;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Thực Hành Quản Lý Nội Dung Với Overflow</h2>
+    <p class="guide">Khối bên dưới có kích thước cố định (300px x 100px). Nhờ <code>overflow: auto</code>, thanh cuộn tự động xuất hiện.</p>
+
+    <!-- Khối kiểm tra overflow -->
+    <div class="overflow-box">
+        Đây là một đoạn văn bản rất dài mà chúng ta sẽ kiểm tra cách <code>overflow</code> hoạt động khi nội dung vượt quá kích thước của phần tử. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies nunc in mauris pharetra, a ultricies justo fermentum. Curabitur vitae purus vel velit feugiat lacinia. Integer sagittis neque sit amet eros feugiat, non hendrerit lorem congue.
+    </div>
+
+</body>
+</html>
