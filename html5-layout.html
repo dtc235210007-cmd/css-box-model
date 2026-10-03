@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bố cục trang web với các thẻ ngữ nghĩa HTML5</title>
+    <style>
+        /* Thiết lập chung và reset box-sizing */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Khung bao bọc căn giữa toàn bộ trang web */
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 1. THẺ HEADER: Đầu trang chứa logo & tiêu đề */
+        header {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 26px;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* 2. THẺ NAV: Thanh điều hướng */
+        nav {
+            background-color: #2563eb;
+            padding: 0 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 12px 14px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            transition: background-color 0.2s;
+        }
+
+        nav ul li a:hover {
+            background-color: #1d4ed8;
+            border-radius: 4px;
+        }
+
+        /* 3. KHU VỰC THÂN TRANG: Kết hợp SECTION, ARTICLE và ASIDE */
+        .main-container {
+            display: flex;
+            padding: 24px;
+            gap: 24px;
+        }
+
+        /* Khối nội dung chính (SECTION) chiếm phần lớn chiều rộng */
+        section.content {
+            flex: 3;
+        }
+
+        /* Từng bài viết độc lập (ARTICLE) */
+        article {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        article h2 {
+            color: #0f172a;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        article .meta {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+
+        article p {
+            font-size: 15px;
+            color: #334155;
+            text-align: justify;
+        }
+
+        /* Khối thanh bên (ASIDE) */
+        aside {
+            flex: 1;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px;
+            height: fit-content;
+        }
+
+        aside h3 {
+            color: #0f172a;
+            font-size: 17px;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+        }
+
+        aside ul {
+            list-style: none;
+        }
+
+        aside ul li {
+            margin-bottom: 10px;
+        }
+
+        aside ul li a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        aside ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* 4. THẺ FOOTER: Chân trang */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 16px 20px;
+            font-size: 13px;
+            border-top: 1px solid #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- HEADER -->
+        <header>
+            <h1>Trang Tin Công Nghệ &amp; Đời Sống</h1>
+            <p>Ứng dụng cấu trúc thẻ ngữ nghĩa chuẩn HTML5 Semantic Elements</p>
+        </header>
+
+        <!-- NAV -->
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Bài viết</a></li>
+                <li><a href="#">Công nghệ</a></li>
+                <li><a href="#">Diễn đàn</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN CONTAINER: SECTION + ASIDE -->
+        <div class="main-container">
+            <!-- SECTION -->
+            <section class="content">
+                <!-- ARTICLE 1 -->
+                <article>
+                    <h2>Tìm hiểu về HTML5 Semantic Elements</h2>
+                    <p class="meta">Đăng bởi: Admin | Ngày: 03/10/2026</p>
+                    <p>Các thẻ ngữ nghĩa trong HTML5 như &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt; và &lt;footer&gt; giúp cấu trúc trang web trở nên mạch lạc, hỗ trợ tối ưu công cụ tìm kiếm (SEO) và giúp các trình đọc màn hình dễ dàng tiếp cận nội dung hơn so với việc lạm dụng thẻ &lt;div&gt;.</p>
+                </article>
+
+                <!-- ARTICLE 2 -->
+                <article>
+                    <h2>Bố cục Flexbox trong thiết kế Web hiện đại</h2>
+                    <p class="meta">Đăng bởi: Ban biên tập | Ngày: 02/10/2026</p>
+                    <p>Flexbox mang lại khả năng phân bổ không gian và căn chỉnh các phần tử con một cách linh hoạt, thay thế hoàn toàn cho các kỹ thuật dàn trang cũ như dùng bảng (&lt;table&gt;) hoặc float và clear.</p>
+                </article>
+            </section>
+
+            <!-- ASIDE -->
+            <aside>
+                <h3>Chuyên mục liên quan</h3>
+                <ul>
+                    <li><a href="#">Khóa học Frontend</a></li>
+                    <li><a href="#">CSS Box Model</a></li>
+                    <li><a href="#">Kỹ thuật Flexbox</a></li>
+                    <li><a href="#">Responsive Web Design</a></li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2026 Bản quyền thuộc về Hệ thống Luyện tập CodeGymX. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
