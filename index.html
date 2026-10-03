@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố cục với display</title>
-    <!-- Liên kết file style.css -->
+    <title>Bố cục với Float và Overflow</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Tiêu đề h1 -->
-    <h1>Bố cục trang web với display</h1>
+    <!-- Tiêu đề h1 theo yêu cầu -->
+    <h1>Bố cục trang với float và overflow</h1>
 
-    <!-- Thanh điều hướng nav -->
-    <nav>
-        <a href="#">Trang chủ</a>
-        <a href="#">Giới thiệu</a>
-        <a href="#">Dịch vụ</a>
-        <a href="#">Liên hệ</a>
-    </nav>
+    <!-- Khối chứa 2 cột dùng float và overflow: hidden để clear float -->
+    <div class="container">
+        <div class="left-column">
+            <h3>Cột bên trái</h3>
+            <p>Nội dung hiển thị ở cột trái, sử dụng float: left để đẩy về phía lề trái của trang web.</p>
+        </div>
+        <div class="right-column">
+            <h3>Cột bên phải</h3>
+            <p>Nội dung hiển thị ở cột phải, sử dụng float: right để phân tách bố cục 2 cột cân xứng.</p>
+        </div>
+    </div>
 
-    <!-- Khối nội dung chứa 3 cột inline-block -->
-    <section>
-        <div class="box">Cột 1</div>
-        <div class="box">Cột 2</div>
-        <div class="box">Cột 3</div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Bản quyền &copy; 2026</p>
-    </footer>
+    <!-- Khối nội dung dài sử dụng overflow: auto để xuất hiện thanh cuộn -->
+    <div class="overflow-box">
+        Đây là nội dung rất dài mà chúng ta kiểm tra overflow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+    </div>
 
 </body>
 </html>
