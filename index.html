@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố cục với Float và Overflow</title>
+    <title>Responsive Navbar</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <!-- Tiêu đề h1 theo yêu cầu -->
-    <h1>Bố cục trang với float và overflow</h1>
+    <nav class="navbar">
+        <div class="logo">MyWebsite</div>
+        
+        <!-- Danh sách menu điều hướng -->
+        <ul class="nav-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
 
-    <!-- Khối chứa 2 cột dùng float và overflow: hidden để clear float -->
-    <div class="container">
-        <div class="left-column">
-            <h3>Cột bên trái</h3>
-            <p>Nội dung hiển thị ở cột trái, sử dụng float: left để đẩy về phía lề trái của trang web.</p>
-        </div>
-        <div class="right-column">
-            <h3>Cột bên phải</h3>
-            <p>Nội dung hiển thị ở cột phải, sử dụng float: right để phân tách bố cục 2 cột cân xứng.</p>
-        </div>
-    </div>
+        <!-- Biểu tượng hamburger menu cho mobile -->
+        <div class="menu-icon">&#9776;</div>
+    </nav>
 
-    <!-- Khối nội dung dài sử dụng overflow: auto để xuất hiện thanh cuộn -->
-    <div class="overflow-box">
-        Đây là nội dung rất dài mà chúng ta kiểm tra overflow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+    <!-- Khối nội dung minh họa trải nghiệm -->
+    <div style="padding: 40px 20px; text-align: center; color: #334155;">
+        <h2>Thực hành Responsive Navbar với Flexbox và JavaScript</h2>
+        <p style="margin-top: 10px;">Thu nhỏ chiều rộng trình duyệt dưới 768px để kiểm tra menu hamburger.</p>
     </div>
 
 </body>
