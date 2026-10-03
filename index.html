@@ -3,64 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Responsive</title>
-    <!-- Liên kết file CSS bên ngoài -->
+    <title>Layout với Responsive Web Design (RWD)</title>
+    <!-- Liên kết file style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. HEADER & NAVIGATION -->
-    <header class="header">
-        <div class="logo">MyBrand</div>
-        <nav class="nav">
-            <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#services">Dịch vụ</a></li>
-                <li><a href="#testimonials">Đánh giá</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
+    <div class="wrapper">
+        <!-- 1. HEADER -->
+        <header class="header">
+            <h1>Chào mừng đến với Website RWD</h1>
+        </header>
+
+        <!-- 2. NAVIGATION BAR -->
+        <nav class="navbar">
+            <a href="#">Trang chủ</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Dịch vụ</a>
+            <a href="#">Liên hệ</a>
         </nav>
-    </header>
 
-    <!-- 2. HERO SECTION -->
-    <section class="hero">
-        <h1>Chào mừng đến với MyBrand</h1>
-        <p>Giải pháp số 1 cho doanh nghiệp của bạn</p>
-        <a href="#services" class="btn">Tìm hiểu thêm</a>
-    </section>
+        <!-- 3. MAIN CONTENT AREA (Bố cục 3 cột trên Desktop) -->
+        <div class="content-container">
+            <!-- Cột trái (Left Menu) -->
+            <aside class="col col-left">
+                <h3>Danh Mục</h3>
+                <ul>
+                    <li><a href="#">Lập trình Web</a></li>
+                    <li><a href="#">HTML5 &amp; CSS3</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Responsive Design</a></li>
+                </ul>
+            </aside>
 
-    <!-- 3. SERVICES SECTION -->
-    <section id="services" class="services">
-        <h2>Dịch vụ của chúng tôi</h2>
-        <div class="service-container">
-            <div class="service">
-                <h3>Thiết kế web</h3>
-                <p>Giao diện hiện đại, chuẩn UI/UX và tối ưu trải nghiệm người dùng.</p>
-            </div>
-            <div class="service">
-                <h3>Phát triển phần mềm</h3>
-                <p>Hệ thống xử lý linh hoạt, mở rộng quy mô dễ dàng và bảo mật cao.</p>
-            </div>
-            <div class="service">
-                <h3>Marketing số</h3>
-                <p>Chiến lược tiếp cận khách hàng mục tiêu hiệu quả trên đa nền tảng.</p>
-            </div>
+            <!-- Cột giữa (Nội dung chính) -->
+            <main class="col col-main">
+                <h2>Nội Dung Chính Của Trang Web</h2>
+                <p>
+                    Thiết kế web đáp ứng (Responsive Web Design - RWD) là kỹ thuật giúp trang web tự động co giãn, biến đổi bố cục để hiển thị tối ưu trên nhiều loại thiết bị với kích thước màn hình khác nhau từ Desktop, Laptop, Máy tính bảng (Tablet) cho đến Điện thoại thông minh (Mobile).
+                </p>
+                <p>
+                    Bằng cách kết hợp giữa <code>meta viewport</code>, tỷ lệ phần trăm (%), kỹ thuật Flexbox và các quy tắc <code>@media query</code>, giao diện luôn giữ được tính cân đối và không xuất hiện thanh cuộn ngang gây khó chịu cho người xem.
+                </p>
+            </main>
+
+            <!-- Cột phải (Right Aside / Quảng cáo) -->
+            <aside class="col col-right">
+                <h3>Tin Nổi Bật</h3>
+                <div class="ads-box">
+                    <p>Khóa học Lập trình Frontend chuyên sâu 2026.</p>
+                </div>
+                <div class="ads-box">
+                    <p>Hội thảo công nghệ AI &amp; Web Development.</p>
+                </div>
+            </aside>
         </div>
-    </section>
 
-    <!-- 4. TESTIMONIALS SECTION -->
-    <section id="testimonials" class="testimonials">
-        <h2>Khách hàng nói gì?</h2>
-        <div class="testimonial-container">
-            <div class="testimonial">"Dịch vụ tuyệt vời, tiến độ hoàn thành rất nhanh!" - <strong>Khách hàng A</strong></div>
-            <div class="testimonial">"Tôi rất hài lòng với giải pháp từ MyBrand, hỗ trợ rất nhiệt tình." - <strong>Khách hàng B</strong></div>
-        </div>
-    </section>
-
-    <!-- 5. FOOTER -->
-    <footer class="footer">
-        <p>&copy; 2026 MyBrand. All rights reserved.</p>
-    </footer>
+        <!-- 4. FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 Bản quyền thuộc về Hệ thống Đào tạo CodeGymX. All rights reserved.</p>
+        </footer>
+    </div>
 
 </body>
 </html>
