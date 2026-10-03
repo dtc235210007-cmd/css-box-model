@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Sticky Navigation</title>
+    <style>
+        /* Định dạng chung */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Thanh điều hướng Sticky */
+        .sticky-menu {
+            position: sticky;
+            top: 0;                 /* Khi mép trên chạm đỉnh viewport sẽ dính lại */
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+            z-index: 1000;          /* Đảm bảo thanh menu luôn nổi lên trên nội dung */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .sticky-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sticky-menu ul li {
+            margin: 0 15px;
+        }
+
+        .sticky-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 16px;
+            display: block;
+            transition: background-color 0.2s;
+        }
+
+        .sticky-menu ul li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        /* Các phần section để cuộn trang */
+        section {
+            padding: 100px 30px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        section h1, section h2 {
+            margin-top: 0;
+        }
+
+        #home { 
+            background-color: #f4f4f4; 
+        }
+
+        #about { 
+            background-color: #e2e8f0; 
+        }
+
+        #services { 
+            background-color: #cbd5e1; 
+        }
+
+        #contact { 
+            background-color: #94a3b8; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- THANH ĐIỀU HƯỚNG STICKY -->
+    <nav class="sticky-menu">
+        <ul>
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#services">Dịch vụ</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home">
+        <h1>Chào mừng đến với trang web của chúng tôi</h1>
+        <p>Hãy cuộn chuột xuống dưới để trải nghiệm hiệu ứng <strong>position: sticky</strong> của thanh menu.</p>
+    </section>
+    
+    <section id="about">
+        <h2>Giới thiệu</h2>
+        <p>Thanh menu vẫn ghim chặt ở mép trên cùng của màn hình khi bạn đang xem phần Giới thiệu...</p>
+    </section>
+    
+    <section id="services">
+        <h2>Dịch vụ</h2>
+        <p>Danh sách các dịch vụ cung cấp...</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Liên hệ</h2>
+        <p>Thông tin liên hệ và phản hồi của người dùng...</p>
+    </section>
+
+</body>
+</html>
