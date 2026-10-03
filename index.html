@@ -3,68 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout với Responsive Web Design (RWD)</title>
-    <!-- Liên kết file style.css -->
+    <title>Responsive Image Gallery</title>
+    <!-- Liên kết file CSS bên ngoài -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="wrapper">
-        <!-- 1. HEADER -->
-        <header class="header">
-            <h1>Chào mừng đến với Website RWD</h1>
-        </header>
+    <h2 class="gallery-title">Bộ Sưu Tập Hình Ảnh (Responsive Image Gallery)</h2>
+    <p class="gallery-desc">Thu nhỏ hoặc mở rộng trình duyệt để xem sự thay đổi số lượng ảnh trên một dòng.</p>
 
-        <!-- 2. NAVIGATION BAR -->
-        <nav class="navbar">
-            <a href="#">Trang chủ</a>
-            <a href="#">Tin tức</a>
-            <a href="#">Sản phẩm</a>
-            <a href="#">Dịch vụ</a>
-            <a href="#">Liên hệ</a>
-        </nav>
-
-        <!-- 3. MAIN CONTENT AREA (Bố cục 3 cột trên Desktop) -->
-        <div class="content-container">
-            <!-- Cột trái (Left Menu) -->
-            <aside class="col col-left">
-                <h3>Danh Mục</h3>
-                <ul>
-                    <li><a href="#">Lập trình Web</a></li>
-                    <li><a href="#">HTML5 &amp; CSS3</a></li>
-                    <li><a href="#">JavaScript</a></li>
-                    <li><a href="#">Responsive Design</a></li>
-                </ul>
-            </aside>
-
-            <!-- Cột giữa (Nội dung chính) -->
-            <main class="col col-main">
-                <h2>Nội Dung Chính Của Trang Web</h2>
-                <p>
-                    Thiết kế web đáp ứng (Responsive Web Design - RWD) là kỹ thuật giúp trang web tự động co giãn, biến đổi bố cục để hiển thị tối ưu trên nhiều loại thiết bị với kích thước màn hình khác nhau từ Desktop, Laptop, Máy tính bảng (Tablet) cho đến Điện thoại thông minh (Mobile).
-                </p>
-                <p>
-                    Bằng cách kết hợp giữa <code>meta viewport</code>, tỷ lệ phần trăm (%), kỹ thuật Flexbox và các quy tắc <code>@media query</code>, giao diện luôn giữ được tính cân đối và không xuất hiện thanh cuộn ngang gây khó chịu cho người xem.
-                </p>
-            </main>
-
-            <!-- Cột phải (Right Aside / Quảng cáo) -->
-            <aside class="col col-right">
-                <h3>Tin Nổi Bật</h3>
-                <div class="ads-box">
-                    <p>Khóa học Lập trình Frontend chuyên sâu 2026.</p>
-                </div>
-                <div class="ads-box">
-                    <p>Hội thảo công nghệ AI &amp; Web Development.</p>
-                </div>
-            </aside>
+    <div class="gallery-container">
+        <!-- Ảnh 1 -->
+        <div class="responsive-col">
+            <div class="gallery-card">
+                <a target="_blank" href="https://picsum.photos/id/1018/800/600">
+                    <img src="https://picsum.photos/id/1018/400/300" alt="Thiên nhiên hùng vĩ">
+                </a>
+                <div class="desc">Khung cảnh đồi núi kỳ vĩ buổi sớm mai</div>
+            </div>
         </div>
 
-        <!-- 4. FOOTER -->
-        <footer class="footer">
-            <p>&copy; 2026 Bản quyền thuộc về Hệ thống Đào tạo CodeGymX. All rights reserved.</p>
-        </footer>
+        <!-- Ảnh 2 -->
+        <div class="responsive-col">
+            <div class="gallery-card">
+                <a target="_blank" href="https://picsum.photos/id/1015/800/600">
+                    <img src="https://picsum.photos/id/1015/400/300" alt="Dòng sông thơ mộng">
+                </a>
+                <div class="desc">Dòng sông uốn lượn qua những rặng cây xanh</div>
+            </div>
+        </div>
+
+        <!-- Ảnh 3 -->
+        <div class="responsive-col">
+            <div class="gallery-card">
+                <a target="_blank" href="https://picsum.photos/id/1019/800/600">
+                    <img src="https://picsum.photos/id/1019/400/300" alt="Bờ biển hoàng hôn">
+                </a>
+                <div class="desc">Sóng biển vỗ về bờ cát lúc chiều hoàng hôn</div>
+            </div>
+        </div>
+
+        <!-- Ảnh 4 -->
+        <div class="responsive-col">
+            <div class="gallery-card">
+                <a target="_blank" href="https://picsum.photos/id/1025/800/600">
+                    <img src="https://picsum.photos/id/1025/400/300" alt="Thế giới động vật">
+                </a>
+                <div class="desc">Chú cún ấm áp dễ thương trong tiết trời lạnh</div>
+            </div>
+        </div>
     </div>
+
+    <!-- Clearfix giúp khung chứa không bị xẹp chiều cao -->
+    <div class="clearfix"></div>
 
 </body>
 </html>
