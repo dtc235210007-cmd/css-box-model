@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Thực hành CSS Box Model 1</title>
-    <style>
-        div {
-            margin: 25px;
-            padding: 35px;
-            width: 200px;
-            background-color: lightseagreen;
-            border: 20px dashed indianred;
-            color: white;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Mô hình hộp CSS (Box Model)</title>
+    <!-- Liên kết file CSS riêng biệt -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div>
-        Content demo box<br/>
+    <h1 style="text-align: center; color: #2c3e50;">So Sánh Content-Box và Border-Box</h1>
+
+    <div class="container">
+        <!-- Thẻ 1: content-box (màu xanh lá) -->
+        <div class="card">
+            <h3>Card 1: content-box</h3>
+            <p>Tổng kích thước mở rộng = width + padding + border.</p>
+        </div>
+
+        <!-- Thẻ 2: border-box (màu vàng) -->
+        <div class="card">
+            <h3>Card 2: border-box</h3>
+            <p>Tổng kích thước được cố định đúng bằng 280px x 150px.</p>
+        </div>
+
+        <!-- Thẻ 3: border-box (màu đỏ) -->
+        <div class="card">
+            <h3>Card 3: border-box</h3>
+            <p>Padding và border được co vào bên trong hộp nội dung.</p>
+        </div>
     </div>
 
 </body>
