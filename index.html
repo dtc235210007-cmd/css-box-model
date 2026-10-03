@@ -3,32 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài tập Mô hình hộp CSS (Box Model)</title>
-    <!-- Liên kết file CSS riêng biệt -->
+    <title>Trang Chủ Giản Lược</title>
+    <!-- Liên kết file CSS bên ngoài -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1 style="text-align: center; color: #2c3e50;">So Sánh Content-Box và Border-Box</h1>
+    <!-- 1. FIXED HEADER -->
+    <header class="main-header">
+        <h1>Tiêu đề Trang Web</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="container">
-        <!-- Thẻ 1: content-box (màu xanh lá) -->
-        <div class="card">
-            <h3>Card 1: content-box</h3>
-            <p>Tổng kích thước mở rộng = width + padding + border.</p>
-        </div>
+    <!-- 2. CONTAINER BỐ CỤC 3 CỘT (FLEXBOX) -->
+    <div class="page-container">
+        <!-- Sidebar Trái -->
+        <aside class="sidebar left-sidebar">
+            <h3>Sidebar Trái</h3>
+            <ul>
+                <li>Mục 1: Tin công nghệ</li>
+                <li>Mục 2: Hướng dẫn lập trình</li>
+                <li>Mục 3: Khóa học Frontend</li>
+            </ul>
+        </aside>
 
-        <!-- Thẻ 2: border-box (màu vàng) -->
-        <div class="card">
-            <h3>Card 2: border-box</h3>
-            <p>Tổng kích thước được cố định đúng bằng 280px x 150px.</p>
-        </div>
+        <!-- Khu vực nội dung chính -->
+        <main class="main-content">
+            <h2>Nội dung chính của trang</h2>
+            <p>Đây là khu vực chứa nội dung quan trọng nhất của trang web. Chúng ta sẽ đặt các bài viết, sản phẩm, hoặc thông tin chi tiết tại đây.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam, quas. Dolorum, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam, quas. Dolorum, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam, quas. Dolorum, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam, quas. Dolorum, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam, quas. Dolorum, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo.</p>
+        </main>
 
-        <!-- Thẻ 3: border-box (màu đỏ) -->
-        <div class="card">
-            <h3>Card 3: border-box</h3>
-            <p>Padding và border được co vào bên trong hộp nội dung.</p>
-        </div>
+        <!-- Sidebar Phải -->
+        <aside class="sidebar right-sidebar">
+            <h3>Sidebar Phải</h3>
+            <p>Đây là một sidebar khác, có thể chứa quảng cáo, bài viết liên quan hoặc các widget khác.</p>
+        </aside>
     </div>
 
 </body>
