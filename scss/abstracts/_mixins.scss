@@ -1,0 +1,21 @@
+// Định nghĩa mixins
+@mixin button-style($bg-color) {
+  background: $bg-color;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: $box-shadow;
+}

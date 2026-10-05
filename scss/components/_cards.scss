@@ -1,0 +1,20 @@
+// Khối Card
+.card {
+  border: 1px solid $border-color;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  @include box-shadow;
+
+  h2 {
+    margin-top: 0;
+    color: $primary-color;
+    font-size: 20px;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+}
