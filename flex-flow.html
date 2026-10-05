@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành CSS flex-flow</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8fafc;
+            padding: 40px 20px;
+            color: #1e293b;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0f172a;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #2563eb;
+            margin-bottom: 6px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        /* 1. flex-flow: row nowrap (Mặc định: trái sang phải, không xuống dòng) */
+        .container-1 {
+            display: flex;
+            flex-flow: row nowrap;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .container-1 > div {
+            background-color: #007bff;
+            color: white;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+
+        /* 2. flex-flow: row-reverse nowrap (Phải sang trái, không xuống dòng) */
+        .container-2 {
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .container-2 > div {
+            background-color: #28a745;
+            color: white;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thực Hành Thuộc Tính CSS flex-flow</h1>
+
+    <!-- VÍ DỤ 1 -->
+    <div class="card">
+        <h2>1. flex-flow: row nowrap (Mặc định)</h2>
+        <p>Các item sắp xếp theo chiều ngang từ trái qua phải và không xuống dòng:</p>
+        <div class="container-1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+
+    <!-- VÍ DỤ 2 -->
+    <div class="card">
+        <h2>2. flex-flow: row-reverse nowrap</h2>
+        <p>Các item sắp xếp theo chiều ngang từ phải qua trái (đảo ngược hướng):</p>
+        <div class="container-2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+
+</body>
+</html>
