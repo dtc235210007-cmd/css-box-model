@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành CSS flex-basis</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8fafc;
+            padding: 30px 20px;
+            color: #1e293b;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #0f172a;
+        }
+
+        .example-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-card h2 {
+            font-size: 18px;
+            color: #2563eb;
+            margin-bottom: 6px;
+        }
+
+        .example-card p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 14px;
+        }
+
+        /* 1. VÍ DỤ 1: Đơn vị px theo chiều ngang */
+        .container-px {
+            display: flex;
+            gap: 10px;
+            background-color: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .container-px .item {
+            padding: 20px 10px;
+            background-color: lightblue;
+            text-align: center;
+            font-weight: bold;
+            color: #0369a1;
+            border-radius: 4px;
+        }
+        .container-px .item1 { flex-basis: 200px; }
+        .container-px .item2 { flex-basis: 100px; }
+        .container-px .item3 { flex-basis: 150px; }
+
+        /* 2. VÍ DỤ 2: flex-direction: column (tác động theo chiều dọc) */
+        .container-col {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 380px;
+            background-color: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .container-col .item {
+            flex-basis: 100px;
+            padding: 10px;
+            background-color: lightgreen;
+            color: #15803d;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        /* 3. VÍ DỤ 3: flex-basis với % */
+        .container-percent {
+            display: flex;
+            gap: 10px;
+            background-color: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .container-percent .item {
+            flex-basis: 50%;
+            padding: 20px;
+            background-color: lightcoral;
+            color: #7f1d1d;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        /* 4. VÍ DỤ 4: Kết hợp flex-basis với flex-grow */
+        .container-grow {
+            display: flex;
+            width: 100%;
+            max-width: 600px;
+            gap: 10px;
+            background-color: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .container-grow .item {
+            padding: 20px 10px;
+            background-color: #bae6fd;
+            color: #0369a1;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .container-grow .item1 {
+            flex-basis: 100px;
+            flex-grow: 1;
+        }
+        .container-grow .item2 {
+            flex-basis: 100px;
+            flex-grow: 2;
+            background-color: #7dd3fc;
+        }
+        .container-grow .item3 {
+            flex-basis: 100px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thực Hành Thuộc Tính CSS flex-basis</h1>
+
+    <!-- VÍ DỤ 1 -->
+    <div class="example-card">
+        <h2>1. flex-basis với đơn vị px (Main Axis = Row)</h2>
+        <p>Kích thước chiều ngang ban đầu: Item 1 (200px), Item 2 (100px), Item 3 (150px):</p>
+        <div class="container-px">
+            <div class="item item1">Item 1 (200px)</div>
+            <div class="item item2">Item 2 (100px)</div>
+            <div class="item item3">Item 3 (150px)</div>
+        </div>
+    </div>
+
+    <!-- VÍ DỤ 2 -->
+    <div class="example-card">
+        <h2>2. flex-basis theo chiều dọc (flex-direction: column)</h2>
+        <p>Main Axis chuyển thành trục dọc, mỗi Item có chiều cao cơ sở 100px:</p>
+        <div class="container-col">
+            <div class="item">Item 1 (Cao 100px)</div>
+            <div class="item">Item 2 (Cao 100px)</div>
+            <div class="item">Item 3 (Cao 100px)</div>
+        </div>
+    </div>
+
+    <!-- VÍ DỤ 3 -->
+    <div class="example-card">
+        <h2>3. flex-basis với đơn vị % (50%)</h2>
+        <p>Mỗi Item chiếm 50% kích thước cơ sở trục chính tạo thành 2 cột đều nhau:</p>
+        <div class="container-percent">
+            <div class="item">Item 1 (50%)</div>
+            <div class="item">Item 2 (50%)</div>
+        </div>
+    </div>
+
+    <!-- VÍ DỤ 4 -->
+    <div class="example-card">
+        <h2>4. Kết hợp flex-basis với flex-grow</h2>
+        <p>Cả 3 Item xuất phát từ 100px, phần dư được chia theo tỷ lệ 1 : 2 : 1 (Item 2 nhận gấp đôi):</p>
+        <div class="container-grow">
+            <div class="item item1">Item 1 (grow: 1)</div>
+            <div class="item item2">Item 2 (grow: 2)</div>
+            <div class="item item3">Item 3 (grow: 1)</div>
+        </div>
+    </div>
+
+</body>
+</html>
