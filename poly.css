@@ -1,0 +1,87 @@
+/* Định dạng phần Header */
+header {
+    position: relative;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 120px;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.shopping-mall {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-variant: small-caps;
+}
+
+.shopping-mall > h1 {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 42px;
+    color: white;
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 3px black;
+    padding-bottom: 0px;
+    border-bottom: 1px dotted gray;
+    margin: 0px;
+}
+
+.shopping-mall > h5 {
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+    color: #e0e0e0;
+}
+
+/* Định dạng Giỏ hàng (poly-cart) */
+.poly-cart {
+    margin-top: 5px;
+}
+
+.poly-cart ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    font-variant: small-caps;
+    font-size: 13px;
+}
+
+.poly-cart ul li {
+    margin-bottom: 4px;
+}
+
+.poly-cart .panel-body {
+    display: flex;
+    align-items: center;
+}
+
+.poly-cart .panel-heading strong {
+    font-variant: small-caps;
+    font-size: larger;
+    text-shadow: 0 0 2px darkgray;
+}
+
+/* Định dạng Sản phẩm (poly-prod) */
+.poly-prod {
+    text-align: center;
+    padding: 5px;
+}
+
+.poly-prod .panel-body {
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poly-prod .panel-body img {
+    height: 140px;
+    max-width: 95%;
+    object-fit: contain;
+}
+
+.poly-prod .panel-footer {
+    font-weight: bold;
+    color: #d9534f;
+    font-size: 16px;
+}
