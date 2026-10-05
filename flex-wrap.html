@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành CSS flex-wrap</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8fafc;
+            padding: 30px 20px;
+            color: #1e293b;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #0f172a;
+        }
+
+        .example-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-card h2 {
+            font-size: 18px;
+            color: #2563eb;
+            margin-bottom: 6px;
+        }
+
+        .example-card p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 14px;
+        }
+
+        /* Container cơ bản: cố định 550px, có viền để thấy rõ vùng chứa */
+        .container {
+            display: flex;
+            width: 550px;
+            border: 2px dashed #94a3b8;
+            padding: 8px;
+            gap: 10px;
+            border-radius: 6px;
+        }
+
+        /* Từng item có độ rộng 160px để khi xếp 6 item sẽ tràn dòng */
+        .item {
+            width: 160px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 4px;
+            flex-shrink: 0; /* Giữ nguyên kích thước để kiểm tra tràn/xuống dòng */
+        }
+
+        /* 1. flex-wrap: wrap */
+        .wrap-demo {
+            flex-wrap: wrap;
+        }
+        .wrap-demo .item {
+            background-color: lightblue;
+            color: #0369a1;
+        }
+
+        /* 2. flex-wrap: nowrap */
+        .nowrap-demo {
+            flex-wrap: nowrap;
+            overflow-x: auto; /* Thêm thanh cuộn ngang khi item tràn viền */
+        }
+        .nowrap-demo .item {
+            background-color: lightgreen;
+            color: #15803d;
+        }
+
+        /* 3. flex-wrap: wrap-reverse */
+        .wrap-reverse-demo {
+            flex-wrap: wrap-reverse;
+            min-height: 160px;
+        }
+        .wrap-reverse-demo .item {
+            background-color: lightcoral;
+            color: #7f1d1d;
+        }
+
+        /* 4. flex-wrap: initial (trở về mặc định nowrap) */
+        .initial-demo {
+            flex-wrap: initial;
+            overflow-x: auto;
+        }
+        .initial-demo .item {
+            background-color: #fef08a;
+            color: #854d0e;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thực Hành Thuộc Tính CSS flex-wrap</h1>
+
+    <!-- 1. WRAP -->
+    <div class="example-card">
+        <h2>1. flex-wrap: wrap</h2>
+        <p>Cho phép các item tự động xuống dòng tiếp theo khi hết khoảng trống:</p>
+        <div class="container wrap-demo">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+        </div>
+    </div>
+
+    <!-- 2. NOWRAP -->
+    <div class="example-card">
+        <h2>2. flex-wrap: nowrap (Mặc định)</h2>
+        <p>Bắt buộc tất cả item nằm trên một dòng duy nhất, không xuống dòng:</p>
+        <div class="container nowrap-demo">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+        </div>
+    </div>
+
+    <!-- 3. WRAP-REVERSE -->
+    <div class="example-card">
+        <h2>3. flex-wrap: wrap-reverse</h2>
+        <p>Cho phép xuống dòng nhưng đảo ngược chiều của trục phụ (Cross Axis):</p>
+        <div class="container wrap-reverse-demo">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+        </div>
+    </div>
+
+    <!-- 4. INITIAL -->
+    <div class="example-card">
+        <h2>4. flex-wrap: initial</h2>
+        <p>Đưa thuộc tính về giá trị mặc định của CSS (tương đương với <code>nowrap</code>):</p>
+        <div class="container initial-demo">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+        </div>
+    </div>
+
+</body>
+</html>
