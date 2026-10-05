@@ -3,43 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid Layout</title>
+    <title>Bố Cục Responsive Bằng CSS Grid</title>
+    <!-- Liên kết file CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
+    <div class="grid-layout">
         <!-- 1. HEADER -->
         <header class="header">
-            <h1>Header - Bố Cục Trang Web Với CSS Grid</h1>
+            <h1>Cổng Thông Tin Công Nghệ &amp; Đời Sống</h1>
+            <p>Bố cục hiện đại tối ưu bằng CSS Grid Layout</p>
         </header>
 
-        <!-- 2. SIDEBAR -->
-        <nav class="sidebar">
-            <h3>Sidebar Menu</h3>
+        <!-- 2. NAVIGATION -->
+        <nav class="nav">
             <ul>
                 <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Sản phẩm</a></li>
                 <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Dịch vụ</a></li>
                 <li><a href="#">Liên hệ</a></li>
             </ul>
         </nav>
 
         <!-- 3. MAIN CONTENT -->
-        <main class="content">
-            <h2>Nội Dung Chính (Main Content)</h2>
+        <main class="main-content">
+            <h2>Nội Dung Chính Của Website</h2>
             <p>
-                Kỹ thuật sử dụng <code>grid-template-areas</code> kết hợp với <code>grid-template-columns: 1fr 3fr</code> giúp định hình cấu trúc trang web một cách trực quan và dễ quản lý nhất trong CSS hiện đại.
+                CSS Grid Layout mang đến hệ thống bố cục hai chiều (2D layout) mạnh mẽ nhất trong thiết kế web hiện đại. Thay vì phải phụ thuộc vào việc lồng ghép nhiều thẻ div hoặc kỹ thuật float/clear truyền thống, Grid cho phép định vị trực tiếp các phần tử con vào từng dòng (rows) và cột (columns) cụ thể.
             </p>
-            <p style="margin-top: 15px;">
-                Khi chuyển sang kích thước màn hình nhỏ hơn 768px (Mobile), Media Queries sẽ tự động dàn trải các vùng Header, Sidebar, Content và Footer thành một cột duy nhất theo chiều dọc.
+            <p>
+                Bằng cách kết hợp <code>grid-template-areas</code> và <code>@media query</code>, chúng ta dễ dàng thay đổi trật tự sắp xếp giữa máy tính để bàn (Desktop) và điện thoại di động (Mobile) chỉ với một vài dòng CSS ngắn gọn.
             </p>
         </main>
 
-        <!-- 4. FOOTER -->
+        <!-- 4. SIDEBAR -->
+        <aside class="sidebar">
+            <h3>Nội Dung Phụ &amp; Quảng Cáo</h3>
+            <div class="widget">
+                <h4>Tin tức nổi bật</h4>
+                <p>Khóa học Frontend Master 2026 khai giảng tuần tới.</p>
+            </div>
+            <div class="widget">
+                <h4>Quảng cáo</h4>
+                <p>Ưu đãi 30% dịch vụ lưu trữ đám mây Cloud VPS.</p>
+            </div>
+        </aside>
+
+        <!-- 5. FOOTER -->
         <footer class="footer">
-            <p>&copy; 2026 Bản quyền thuộc về CodeGymX - Thực hành CSS Grid Layout</p>
+            <p>&copy; 2026 Bản quyền thuộc về Hệ thống Đào tạo Lập trình. All rights reserved.</p>
         </footer>
     </div>
 
