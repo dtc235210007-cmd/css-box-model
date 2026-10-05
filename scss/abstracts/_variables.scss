@@ -1,16 +1,17 @@
-// Breakpoints
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-
-// Bảng màu & Giao diện
+// Màu sắc chủ đạo
 $primary-color: #2563eb;
-$dark-color: #1e293b;
-$light-bg: #f8fafc;
-$box-bg: #e2e8f0;
-$border-color: #cbd5e1;
+$primary-dark: #1d4ed8;
+$secondary-color: #0f172a;
+$text-dark: #1e293b;
+$text-muted: #64748b;
+$bg-light: #f8fafc;
+$white: #ffffff;
 
-// Lưới
-$grid-columns: 12;
-$grid-gap: 15px;
+// Phông chữ & Kích thước
+$font-main: Arial, Helvetica, sans-serif;
+$font-title: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+// Khoảng cách & Hiệu ứng
+$border-radius-base: 8px;
+$transition-default: all 0.3s ease;
+$box-shadow-card: 0 4px 15px rgba(0, 0, 0, 0.06);
