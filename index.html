@@ -3,55 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố Cục Responsive Bằng CSS Grid</title>
+    <title>Flexbox Layout Responsive</title>
     <!-- Liên kết file CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="grid-layout">
+    <div class="container">
         <!-- 1. HEADER -->
         <header class="header">
-            <h1>Cổng Thông Tin Công Nghệ &amp; Đời Sống</h1>
-            <p>Bố cục hiện đại tối ưu bằng CSS Grid Layout</p>
+            <h1>Header - Website Flexbox Layout</h1>
         </header>
 
         <!-- 2. NAVIGATION -->
         <nav class="nav">
             <ul>
                 <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Giới thiệu</a></li>
                 <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
                 <li><a href="#">Liên hệ</a></li>
             </ul>
         </nav>
 
-        <!-- 3. MAIN CONTENT -->
-        <main class="main-content">
-            <h2>Nội Dung Chính Của Website</h2>
-            <p>
-                CSS Grid Layout mang đến hệ thống bố cục hai chiều (2D layout) mạnh mẽ nhất trong thiết kế web hiện đại. Thay vì phải phụ thuộc vào việc lồng ghép nhiều thẻ div hoặc kỹ thuật float/clear truyền thống, Grid cho phép định vị trực tiếp các phần tử con vào từng dòng (rows) và cột (columns) cụ thể.
-            </p>
-            <p>
-                Bằng cách kết hợp <code>grid-template-areas</code> và <code>@media query</code>, chúng ta dễ dàng thay đổi trật tự sắp xếp giữa máy tính để bàn (Desktop) và điện thoại di động (Mobile) chỉ với một vài dòng CSS ngắn gọn.
-            </p>
-        </main>
+        <!-- 3. MAIN CONTAINER (CONTENT + SIDEBAR) -->
+        <div class="main-container">
+            <!-- Khu vực nội dung chính -->
+            <main class="content">
+                <h2>Khu Vực Nội Dung Chính (Main Content)</h2>
+                <p>
+                    Bố cục này sử dụng CSS Flexbox toàn diện: <code>.container</code> thiết lập <code>display: flex</code> với <code>flex-direction: column</code> để xếp chồng Header, Nav, Main-container và Footer theo chiều dọc.
+                </p>
+                <p>
+                    Bên trong <code>.main-container</code>, nội dung chính chiếm <code>flex: 3</code> (khoảng 75% chiều rộng), trong khi thanh bên Sidebar chiếm <code>flex: 1</code> (khoảng 25% chiều rộng). Thuộc tính <code>flex: 1</code> trên khối cha giúp toàn bộ chiều cao của trang luôn co giãn lấp đầy khung hình (100vh).
+                </p>
+            </main>
 
-        <!-- 4. SIDEBAR -->
-        <aside class="sidebar">
-            <h3>Nội Dung Phụ &amp; Quảng Cáo</h3>
-            <div class="widget">
-                <h4>Tin tức nổi bật</h4>
-                <p>Khóa học Frontend Master 2026 khai giảng tuần tới.</p>
-            </div>
-            <div class="widget">
-                <h4>Quảng cáo</h4>
-                <p>Ưu đãi 30% dịch vụ lưu trữ đám mây Cloud VPS.</p>
-            </div>
-        </aside>
+            <!-- Thanh bên Sidebar -->
+            <aside class="sidebar">
+                <h3>Thanh Bên (Sidebar)</h3>
+                <div class="widget">
+                    <h4>Tin tức mới nhất</h4>
+                    <p>Khóa học lập trình Frontend hiện đại 2026.</p>
+                </div>
+                <div class="widget">
+                    <h4>Liên kết nhanh</h4>
+                    <p>Tài liệu CSS Flexbox và Grid toàn tập.</p>
+                </div>
+            </aside>
+        </div>
 
-        <!-- 5. FOOTER -->
+        <!-- 4. FOOTER -->
         <footer class="footer">
             <p>&copy; 2026 Bản quyền thuộc về Hệ thống Đào tạo Lập trình. All rights reserved.</p>
         </footer>
