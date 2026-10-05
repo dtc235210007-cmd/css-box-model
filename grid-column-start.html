@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành CSS grid-column-start</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8fafc;
+            padding: 30px 20px;
+            color: #1e293b;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #0f172a;
+        }
+
+        .example-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-card h2 {
+            font-size: 18px;
+            color: #2563eb;
+            margin-bottom: 6px;
+        }
+
+        .example-card p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 14px;
+        }
+
+        /* Định dạng chung cho các ô grid */
+        .grid-item {
+            background-color: #e2e8f0;
+            padding: 18px 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #334155;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* Điểm nhấn nổi bật cho Item 1 */
+        .highlight {
+            background-color: #38bdf8;
+            color: #082f49;
+            border: 1px solid #0284c7;
+        }
+
+        /* VÍ DỤ 1: auto */
+        .grid-auto {
+            display: grid;
+            grid-template-columns: 120px 120px 120px;
+            gap: 10px;
+        }
+
+        .grid-auto .item1 {
+            grid-column-start: auto; /* Giữ vị trí mặc định theo luồng sắp xếp */
+        }
+
+        /* VÍ DỤ 2: span n */
+        .grid-span {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .grid-span .item1 {
+            grid-column-start: span 2; /* Trải dài qua 2 cột */
+            background-color: #4ade80;
+            color: #052e16;
+            border-color: #16a34a;
+        }
+
+        /* VÍ DỤ 3: column-line */
+        .grid-line {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .grid-line .item1 {
+            grid-column-start: 2; /* Bắt đầu từ đường kẻ cột số 2 (bỏ trống cột 1) */
+            background-color: #fb923c;
+            color: #431407;
+            border-color: #ea580c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thực Hành Thuộc Tính grid-column-start</h1>
+
+    <!-- 1. VÍ DỤ 1: auto -->
+    <div class="example-card">
+        <h2>1. Giá trị auto (Mặc định)</h2>
+        <p>Item 1 đặt <code>grid-column-start: auto</code>, hiển thị ở ô đầu tiên theo thứ tự thông thường:</p>
+        <div class="grid-auto">
+            <div class="grid-item highlight item1">Item 1 (auto)</div>
+            <div class="grid-item">Item 2</div>
+            <div class="grid-item">Item 3</div>
+        </div>
+    </div>
+
+    <!-- 2. VÍ DỤ 2: span n -->
+    <div class="example-card">
+        <h2>2. Giá trị span n (Trải rộng số cột)</h2>
+        <p>Item 1 đặt <code>grid-column-start: span 2</code>, chiếm độ rộng bằng 2 cột:</p>
+        <div class="grid-span">
+            <div class="grid-item item1">Item 1 (span 2)</div>
+            <div class="grid-item">Item 2</div>
+            <div class="grid-item">Item 3</div>
+            <div class="grid-item">Item 4</div>
+        </div>
+    </div>
+
+    <!-- 3. VÍ DỤ 3: column-line -->
+    <div class="example-card">
+        <h2>3. Giá trị column-line (Đường kẻ cột cụ thể)</h2>
+        <p>Item 1 đặt <code>grid-column-start: 2</code>, bắt đầu từ đường kẻ số 2 nên đẩy qua cột số 2 (cột 1 trống):</p>
+        <div class="grid-line">
+            <div class="grid-item highlight item1">Item 1 (line 2)</div>
+            <div class="grid-item">Item 2</div>
+            <div class="grid-item">Item 3</div>
+            <div class="grid-item">Item 4</div>
+        </div>
+    </div>
+
+</body>
+</html>

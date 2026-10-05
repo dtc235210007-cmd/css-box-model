@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành CSS grid-row-gap</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8fafc;
+            padding: 30px 20px;
+            color: #1e293b;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #0f172a;
+        }
+
+        .example-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-card h2 {
+            font-size: 18px;
+            color: #2563eb;
+            margin-bottom: 6px;
+        }
+
+        .example-card p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 14px;
+        }
+
+        /* Định dạng chung cho các ô div bên trong */
+        .grid-box div {
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        /* VÍ DỤ 1: Giá trị độ dài cố định (length: 20px) */
+        .grid-length {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 20px; /* row-gap: 20px */
+            column-gap: 10px;
+        }
+
+        .grid-length div {
+            background-color: lightblue;
+            color: #0c4a6e;
+        }
+
+        /* VÍ DỤ 2: Giá trị phần trăm (percentage: 5% trên khung cao 300px) */
+        .grid-percent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 5%;
+            column-gap: 10px;
+            height: 280px;
+        }
+
+        .grid-percent div {
+            background-color: lightgreen;
+            color: #064e3b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* VÍ DỤ 3: Giá trị toàn cục (global values: initial = 0) */
+        .grid-initial {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: initial; /* Khôi phục về mặc định (0px) */
+            column-gap: 10px;
+        }
+
+        .grid-initial div {
+            background-color: #fed7aa;
+            color: #7c2d12;
+            border: 1px solid #fb923c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thực Hành Thuộc Tính CSS grid-row-gap</h1>
+
+    <!-- 1. VÍ DỤ 1: LENGTH -->
+    <div class="example-card">
+        <h2>1. Giá trị Length: <code>grid-row-gap: 20px;</code></h2>
+        <p>Khoảng cách giữa hàng 1 và hàng 2 được cố định bằng 20px:</p>
+        <div class="grid-box grid-length">
+            <div>Ô 1 (Hàng 1)</div>
+            <div>Ô 2 (Hàng 1)</div>
+            <div>Ô 3 (Hàng 2)</div>
+            <div>Ô 4 (Hàng 2)</div>
+        </div>
+    </div>
+
+    <!-- 2. VÍ DỤ 2: PERCENTAGE -->
+    <div class="example-card">
+        <h2>2. Giá trị Phần trăm: <code>grid-row-gap: 5%;</code></h2>
+        <p>Khoảng cách giữa các hàng bằng 5% chiều cao khung chứa (container height: 280px):</p>
+        <div class="grid-box grid-percent">
+            <div>Ô 1 (Hàng 1)</div>
+            <div>Ô 2 (Hàng 1)</div>
+            <div>Ô 3 (Hàng 2)</div>
+            <div>Ô 4 (Hàng 2)</div>
+        </div>
+    </div>
+
+    <!-- 3. VÍ DỤ 3: GLOBAL VALUE -->
+    <div class="example-card">
+        <h2>3. Giá trị Toàn cục: <code>grid-row-gap: initial;</code></h2>
+        <p>Thuộc tính được trả về giá trị mặc định ban đầu (0px, hai hàng dính sát nhau):</p>
+        <div class="grid-box grid-initial">
+            <div>Ô 1 (Hàng 1)</div>
+            <div>Ô 2 (Hàng 1)</div>
+            <div>Ô 3 (Hàng 2)</div>
+            <div>Ô 4 (Hàng 2)</div>
+        </div>
+    </div>
+
+</body>
+</html>
