@@ -3,59 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Layout Responsive</title>
-    <!-- Liên kết file CSS -->
+    <title>Bố Cục Responsive Bằng CSS Flexbox</title>
+    <!-- Liên kết file CSS bên ngoài -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
+    <div class="layout-container">
         <!-- 1. HEADER -->
         <header class="header">
-            <h1>Header - Website Flexbox Layout</h1>
+            <h1>Cổng Thông Tin Công Nghệ &amp; Thiết Kế Web</h1>
+            <p>Xây dựng giao diện linh hoạt chuẩn Responsive bằng CSS Flexbox</p>
         </header>
 
         <!-- 2. NAVIGATION -->
-        <nav class="nav">
-            <ul>
+        <nav class="navbar">
+            <ul class="nav-menu">
                 <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Bài viết</a></li>
+                <li><a href="#">Khóa học</a></li>
+                <li><a href="#">Diễn đàn</a></li>
                 <li><a href="#">Liên hệ</a></li>
             </ul>
         </nav>
 
-        <!-- 3. MAIN CONTAINER (CONTENT + SIDEBAR) -->
-        <div class="main-container">
-            <!-- Khu vực nội dung chính -->
-            <main class="content">
-                <h2>Khu Vực Nội Dung Chính (Main Content)</h2>
+        <!-- 3. BODY WRAPPER (MAIN CONTENT + SIDEBAR) -->
+        <div class="body-wrapper">
+            <!-- Main Content -->
+            <main class="main-content">
+                <h2>Bố Cục Linh Hoạt Với CSS Flexbox</h2>
                 <p>
-                    Bố cục này sử dụng CSS Flexbox toàn diện: <code>.container</code> thiết lập <code>display: flex</code> với <code>flex-direction: column</code> để xếp chồng Header, Nav, Main-container và Footer theo chiều dọc.
+                    Flexbox (Flexible Box Layout) là một mô hình bố cục một chiều được thiết kế để phân phối không gian giữa các phần tử trong một vùng chứa, ngay cả khi kích thước của chúng chưa được xác định trước hoặc thay đổi linh hoạt theo kích cỡ màn hình.
                 </p>
                 <p>
-                    Bên trong <code>.main-container</code>, nội dung chính chiếm <code>flex: 3</code> (khoảng 75% chiều rộng), trong khi thanh bên Sidebar chiếm <code>flex: 1</code> (khoảng 25% chiều rộng). Thuộc tính <code>flex: 1</code> trên khối cha giúp toàn bộ chiều cao của trang luôn co giãn lấp đầy khung hình (100vh).
+                    Bằng cách kết hợp <code>display: flex</code>, <code>flex-direction: column</code> cho khung ngoài và <code>flex-direction: row</code> cho thân trang, chúng ta có thể tạo ra bố cục dạng lưới linh hoạt trên máy tính (Desktop), sau đó dễ dàng chuyển đổi thành dạng cột dọc duy nhất trên điện thoại di động (Mobile) bằng Media Queries.
                 </p>
             </main>
 
-            <!-- Thanh bên Sidebar -->
+            <!-- Sidebar -->
             <aside class="sidebar">
-                <h3>Thanh Bên (Sidebar)</h3>
+                <h3>Chuyên Mục Nổi Bật</h3>
                 <div class="widget">
-                    <h4>Tin tức mới nhất</h4>
-                    <p>Khóa học lập trình Frontend hiện đại 2026.</p>
+                    <h4>Tin vắn công nghệ</h4>
+                    <p>Cập nhật các tính năng CSS mới nhất năm 2026.</p>
                 </div>
                 <div class="widget">
-                    <h4>Liên kết nhanh</h4>
-                    <p>Tài liệu CSS Flexbox và Grid toàn tập.</p>
+                    <h4>Quảng cáo &amp; Tài trợ</h4>
+                    <p>Nhận ngay bộ tài liệu UI/UX Frontend miễn phí.</p>
                 </div>
             </aside>
         </div>
 
         <!-- 4. FOOTER -->
         <footer class="footer">
-            <p>&copy; 2026 Bản quyền thuộc về Hệ thống Đào tạo Lập trình. All rights reserved.</p>
+            <p>&copy; 2026 Bản quyền thuộc về CodeGymX - Hệ thống luyện tập Frontend</p>
         </footer>
     </div>
 

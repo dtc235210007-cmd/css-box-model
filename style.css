@@ -9,100 +9,122 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
     color: #1e293b;
-    background-color: #f8fafc;
-}
-
-/* ========================================================
-   2. KHUNG CONTAINER CHÍNH (FLEXBOX COLUMN)
-   ======================================================== */
-.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Đảm bảo trang web luôn chiếm tối thiểu chiều cao màn hình */
-}
-
-/* Header & Footer */
-.header, .footer {
-    background-color: #1e293b;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px;
-}
-
-.header h1 {
-    font-size: 24px;
-}
-
-/* Navigation Menu */
-.nav {
-    background-color: #334155;
-    padding: 12px 20px;
-}
-
-.nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    transition: color 0.2s;
-}
-
-.nav ul li a:hover {
-    color: #38bdf8;
-}
-
-/* ========================================================
-   3. MAIN-CONTAINER (FLEX ROW TRÊN DESKTOP)
-   ======================================================== */
-.main-container {
-    display: flex;
-    flex: 1; /* Tự động nở rộng để đẩy footer sát đáy màn hình */
-}
-
-.content {
-    flex: 3; /* Chiếm 3 phần không gian ngang */
-    padding: 30px;
-    background-color: #ffffff;
     line-height: 1.6;
 }
 
-.content h2 {
+/* ========================================================
+   2. BỐ CỤC FLEXBOX TỔNG THỂ (DESKTOP)
+   ======================================================== */
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    gap: 15px;
+}
+
+/* 1. Header */
+.header {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.header h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* 2. Navigation */
+.navbar {
+    background-color: #2563eb;
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.nav-menu li a:hover {
+    background-color: #1d4ed8;
+}
+
+/* 3. Thân trang (Main Content + Sidebar) sắp xếp dạng hàng ngang */
+.body-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex: 1; /* Chiếm toàn bộ không gian dọc còn lại */
+    gap: 15px;
+}
+
+/* Main Content: chiếm 75% không gian (flex: 3) */
+.main-content {
+    flex: 3;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.main-content h2 {
     color: #0f172a;
     font-size: 22px;
     margin-bottom: 15px;
 }
 
-.content p {
+.main-content p {
     color: #334155;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+    text-align: justify;
 }
 
+/* Sidebar: chiếm 25% không gian (flex: 1) */
 .sidebar {
-    flex: 1; /* Chiếm 1 phần không gian ngang */
-    background-color: #f1f5f9;
-    padding: 25px;
-    border-left: 1px solid #e2e8f0;
+    flex: 1;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .sidebar h3 {
     color: #0f172a;
-    font-size: 18px;
+    font-size: 17px;
     border-bottom: 2px solid #cbd5e1;
     padding-bottom: 8px;
     margin-bottom: 16px;
 }
 
 .widget {
-    background-color: #ffffff;
+    background-color: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 6px;
     padding: 12px;
@@ -110,35 +132,51 @@ body {
 }
 
 .widget h4 {
-    color: #2563eb;
     font-size: 14px;
-    margin-bottom: 4px;
+    color: #2563eb;
+    margin-bottom: 6px;
 }
 
 .widget p {
+    font-size: 13px;
     color: #64748b;
+}
+
+/* 4. Footer */
+.footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 18px;
+    border-radius: 6px;
     font-size: 13px;
 }
 
-.footer {
-    font-size: 14px;
-    color: #94a3b8;
-}
-
 /* ========================================================
-   4. RESPONSIVE DESIGN TRÊN MOBILE (Dưới hoặc bằng 768px)
+   3. RESPONSIVE DESIGN TRÊN MOBILE (Màn hình dưới 768px)
    ======================================================== */
 @media (max-width: 768px) {
-    .main-container {
-        flex-direction: column; /* Chuyển Content và Sidebar thành hàng dọc */
+    .layout-container {
+        padding: 10px;
+        gap: 12px;
+    }
+
+    /* Chuyển thân trang thành cột dọc */
+    .body-wrapper {
+        flex-direction: column;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .main-content {
+        padding: 20px;
     }
 
     .sidebar {
-        border-left: none;
-        border-top: 1px solid #e2e8f0;
-    }
-
-    .nav ul {
-        gap: 15px;
+        padding: 20px;
     }
 }
