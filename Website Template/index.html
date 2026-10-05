@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân Tích &amp; Xây Dựng Cấu Trúc Website Template</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. HEADER: Tiêu đề trang web -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo">TechLearn Portal</h1>
+            <p class="tagline">Nền tảng chia sẻ kiến thức lập trình &amp; thiết kế web thực chiến</p>
+        </div>
+    </header>
+
+    <!-- 2. NAVIGATION MENU: 5 mục điều hướng -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#" class="active">Trang chủ</a></li>
+                <li><a href="#about">Khóa học</a></li>
+                <li><a href="#content">Bài viết nổi bật</a></li>
+                <li><a href="#forum">Diễn đàn</a></li>
+                <li><a href="#footer">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 3. CONTENT SECTION: Bố cục chính kèm hình ảnh và nội dung -->
+    <main class="main-content container">
+        
+        <!-- Cột bài viết chính -->
+        <article class="primary-content">
+            <h2>Cấu Trúc Khối Cơ Bản Của Một Website Hiện Đại</h2>
+            <p class="meta-info">Đăng ngày: 05/10/2026 | Tác giả: Ban Biên Tập</p>
+            
+            <p>
+                Một trang web tiêu chuẩn luôn cần có sự phân định rõ ràng giữa các phân vùng ngữ nghĩa: Header định vị thương hiệu, Navigation dẫn dắt người xem, Content truyền tải giá trị cốt lõi và Footer chốt lại các thông tin pháp lý, bản quyền.
+            </p>
+
+            <!-- Hình ảnh minh họa (Dùng ảnh online, không cần tải về máy) -->
+            <div class="feature-image">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&auto=format&fit=crop&q=80" alt="Minh họa cấu trúc web">
+            </div>
+
+            <p>
+                Việc ứng dụng kết hợp giữa CSS Flexbox và các thẻ HTML5 Semantic (như header, nav, main, article, aside, footer) giúp mã nguồn sạch sẽ, hỗ trợ tốt cho công cụ tìm kiếm (SEO) và tối ưu hóa trải nghiệm đọc trên mọi thiết bị.
+            </p>
+        </article>
+
+        <!-- Thanh bên (Sidebar phụ trợ) -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>Chủ Đề Quan Tâm</h3>
+                <ul>
+                    <li><a href="#">Bố cục CSS Grid toàn tập</a></li>
+                    <li><a href="#">Flexbox căn chỉnh chuyên sâu</a></li>
+                    <li><a href="#">Bootstrap 5 Responsive UI</a></li>
+                    <li><a href="#">Tối ưu hóa hình ảnh web</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- 4. FOOTER: Thông tin bản quyền -->
+    <footer class="site-footer" id="footer">
+        <div class="container">
+            <p>&copy; 2026 TechLearn Portal. All rights reserved. Bản quyền thuộc về CodeGymX.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
