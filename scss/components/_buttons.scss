@@ -1,4 +1,4 @@
-// Nút bấm
+// Áp dụng mixin vào class .button
 .button {
   @include button-style($primary-color);
 }

@@ -1,21 +1,26 @@
-// Định nghĩa mixins
+// Mixin định kiểu nút bấm linh hoạt
 @mixin button-style($bg-color) {
   background: $bg-color;
-  color: #ffffff;
-  padding: 10px 20px;
+  color: white;
+  padding: $padding-standard;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
+  font-weight: bold;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 
   &:hover {
     opacity: 0.9;
+    transform: translateY(-2px);
   }
 }
 
-@mixin box-shadow {
-  box-shadow: $box-shadow;
+// Mixin định kiểu khối hộp Card
+@mixin box-style {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: $box-shadow-default;
 }

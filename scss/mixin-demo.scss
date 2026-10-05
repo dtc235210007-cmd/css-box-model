@@ -1,0 +1,19 @@
+// Import các module theo đúng thứ tự phụ thuộc
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/typography";
+@import "components/buttons";
+@import "components/cards";
+
+// Bổ sung container hiển thị
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
