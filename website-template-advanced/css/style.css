@@ -1,0 +1,225 @@
+/* Reset CSS mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #333;
+}
+
+/* 1. Header có nền ảnh và hiệu ứng blur */
+.header {
+    background: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1600&auto=format&fit=crop&q=80') center/cover;
+    color: white;
+    text-align: center;
+    padding: 160px 20px 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: inherit;
+    filter: blur(8px);
+    z-index: 0;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.header p {
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+    color: #e2e8f0;
+}
+
+.btn {
+    display: inline-block;
+    background: #1abc9c;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3);
+}
+
+.btn:hover {
+    background: #16a085;
+    transform: translateY(-2px);
+}
+
+/* 2. Navbar cố định */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 14px 0;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 18px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #f39c12;
+}
+
+/* 3. Content Section & CSS Grid Card Layout */
+.content {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #1e293b;
+    position: relative;
+    display: inline-block;
+}
+
+.content h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #1abc9c;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 10px;
+}
+
+.card {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* 4. Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    background: #1e293b;
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.footer-right p {
+    text-align: right;
+    margin-bottom: 4px;
+}
+
+/* Responsive trên Mobile */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .footer-right p {
+        text-align: center;
+    }
+
+    .navbar ul li {
+        margin: 0 8px;
+    }
+}
