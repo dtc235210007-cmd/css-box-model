@@ -3,59 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Image Gallery</title>
-    <!-- Liên kết file CSS bên ngoài -->
+    <title>CSS Grid Layout</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h2 class="gallery-title">Bộ Sưu Tập Hình Ảnh (Responsive Image Gallery)</h2>
-    <p class="gallery-desc">Thu nhỏ hoặc mở rộng trình duyệt để xem sự thay đổi số lượng ảnh trên một dòng.</p>
+    <div class="container">
+        <!-- 1. HEADER -->
+        <header class="header">
+            <h1>Header - Bố Cục Trang Web Với CSS Grid</h1>
+        </header>
 
-    <div class="gallery-container">
-        <!-- Ảnh 1 -->
-        <div class="responsive-col">
-            <div class="gallery-card">
-                <a target="_blank" href="https://picsum.photos/id/1018/800/600">
-                    <img src="https://picsum.photos/id/1018/400/300" alt="Thiên nhiên hùng vĩ">
-                </a>
-                <div class="desc">Khung cảnh đồi núi kỳ vĩ buổi sớm mai</div>
-            </div>
-        </div>
+        <!-- 2. SIDEBAR -->
+        <nav class="sidebar">
+            <h3>Sidebar Menu</h3>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
 
-        <!-- Ảnh 2 -->
-        <div class="responsive-col">
-            <div class="gallery-card">
-                <a target="_blank" href="https://picsum.photos/id/1015/800/600">
-                    <img src="https://picsum.photos/id/1015/400/300" alt="Dòng sông thơ mộng">
-                </a>
-                <div class="desc">Dòng sông uốn lượn qua những rặng cây xanh</div>
-            </div>
-        </div>
+        <!-- 3. MAIN CONTENT -->
+        <main class="content">
+            <h2>Nội Dung Chính (Main Content)</h2>
+            <p>
+                Kỹ thuật sử dụng <code>grid-template-areas</code> kết hợp với <code>grid-template-columns: 1fr 3fr</code> giúp định hình cấu trúc trang web một cách trực quan và dễ quản lý nhất trong CSS hiện đại.
+            </p>
+            <p style="margin-top: 15px;">
+                Khi chuyển sang kích thước màn hình nhỏ hơn 768px (Mobile), Media Queries sẽ tự động dàn trải các vùng Header, Sidebar, Content và Footer thành một cột duy nhất theo chiều dọc.
+            </p>
+        </main>
 
-        <!-- Ảnh 3 -->
-        <div class="responsive-col">
-            <div class="gallery-card">
-                <a target="_blank" href="https://picsum.photos/id/1019/800/600">
-                    <img src="https://picsum.photos/id/1019/400/300" alt="Bờ biển hoàng hôn">
-                </a>
-                <div class="desc">Sóng biển vỗ về bờ cát lúc chiều hoàng hôn</div>
-            </div>
-        </div>
-
-        <!-- Ảnh 4 -->
-        <div class="responsive-col">
-            <div class="gallery-card">
-                <a target="_blank" href="https://picsum.photos/id/1025/800/600">
-                    <img src="https://picsum.photos/id/1025/400/300" alt="Thế giới động vật">
-                </a>
-                <div class="desc">Chú cún ấm áp dễ thương trong tiết trời lạnh</div>
-            </div>
-        </div>
+        <!-- 4. FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 Bản quyền thuộc về CodeGymX - Thực hành CSS Grid Layout</p>
+        </footer>
     </div>
-
-    <!-- Clearfix giúp khung chứa không bị xẹp chiều cao -->
-    <div class="clearfix"></div>
 
 </body>
 </html>
