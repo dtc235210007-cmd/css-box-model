@@ -1,7 +1,16 @@
-// Biến màu sắc, kích thước chữ, padding và đổ bóng
-$primary-color: #ef4444; // Mã màu đỏ hiện đại thay cho 'red' thuần
-$text-color: #222222;
-$font-large: 32px;
-$font-medium: 28px;
-$padding-standard: 10px 20px;
-$box-shadow-default: 2px 2px 10px rgba(0, 0, 0, 0.1);
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Bảng màu & Giao diện
+$primary-color: #2563eb;
+$dark-color: #1e293b;
+$light-bg: #f8fafc;
+$box-bg: #e2e8f0;
+$border-color: #cbd5e1;
+
+// Lưới
+$grid-columns: 12;
+$grid-gap: 15px;

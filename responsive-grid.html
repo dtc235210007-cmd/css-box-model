@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tái Cấu Trúc CSS Sang SASS - Responsive Grid</title>
+    <link rel="stylesheet" href="css/responsive-grid.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 25px; color: #1e293b;">
+            Hệ Thống Lưới Responsive (Tái Cấu Trúc Bằng SASS)
+        </h1>
+
+        <!-- Hàng 1: 3 cột đều nhau trên Desktop, 1 cột trên Mobile -->
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-12 col-md-4">
+                <div class="grid-box">col-12 col-md-4</div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="grid-box">col-12 col-md-4</div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="grid-box">col-12 col-md-4</div>
+            </div>
+        </div>
+
+        <!-- Hàng 2: Tỷ lệ 8 : 4 (Nội dung chính và Sidebar) -->
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-12 col-md-8">
+                <div class="grid-box" style="background-color: #dbeafe;">Main Content (col-md-8)</div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="grid-box" style="background-color: #fef08a;">Sidebar (col-md-4)</div>
+            </div>
+        </div>
+
+        <!-- Hàng 3: 4 cột đều nhau (col-md-3) -->
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="grid-box">Cột 1 (col-md-3)</div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="grid-box">Cột 2 (col-md-3)</div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="grid-box">Cột 3 (col-md-3)</div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="grid-box">Cột 4 (col-md-3)</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

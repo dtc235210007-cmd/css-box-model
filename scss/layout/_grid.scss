@@ -1,0 +1,63 @@
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 ($grid-gap / 2);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -($grid-gap / 2);
+
+  // Định dạng chung cho mọi cột
+  [class*="col-"] {
+    padding: ($grid-gap / 2);
+    width: 100%;
+  }
+
+  // Vòng lặp tự động tạo các cột cơ bản (Mobile First)
+  @for $i from 1 through $grid-columns {
+    .col-#{$i} {
+      flex: 0 0 percentage($i / $grid-columns);
+      max-width: percentage($i / $grid-columns);
+    }
+  }
+
+  // Vòng lặp cho breakpoint Tablet (col-md-*)
+  @include respond-to(md) {
+    @for $i from 1 through $grid-columns {
+      .col-md-#{$i} {
+        flex: 0 0 percentage($i / $grid-columns);
+        max-width: percentage($i / $grid-columns);
+      }
+    }
+  }
+
+  // Vòng lặp cho breakpoint Desktop (col-lg-*)
+  @include respond-to(lg) {
+    @for $i from 1 through $grid-columns {
+      .col-lg-#{$i} {
+        flex: 0 0 percentage($i / $grid-columns);
+        max-width: percentage($i / $grid-columns);
+      }
+    }
+  }
+}
+
+// Khối demo bên trong cột
+.grid-box {
+  background-color: $box-bg;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: $primary-color;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    background-color: lighten($primary-color, 40%);
+  }
+}
