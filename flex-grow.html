@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành CSS flex-grow</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8fafc;
+            padding: 40px 20px;
+            color: #1e293b;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        p.description {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        /* Flex Container chứa 5 div */
+        .flex-container {
+            display: flex;
+            background-color: #e2e8f0;
+            padding: 12px;
+            gap: 12px;
+            border-radius: 6px;
+        }
+
+        /* Định dạng chung cho 5 Flex Items */
+        .flex-container div {
+            background-color: #93c5fd;
+            color: #0c4a6e;
+            padding: 25px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 4px;
+            /* Mặc định flex-grow là 0, không tự nở rộng */
+            flex-grow: 0;
+        }
+
+        /* Div thứ 2 áp dụng flex-grow: 1 để chiếm toàn bộ phần không gian còn trống */
+        .flex-container .item-grow {
+            flex-grow: 1;
+            background-color: #3b82f6;
+            color: #ffffff;
+            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thực Hành Thuộc Tính CSS flex-grow</h1>
+    <p class="description">Quan sát khả năng phát triển của Item 2 khi được áp dụng thuộc tính <code>flex-grow: 1</code>.</p>
+
+    <div class="card">
+        <h2>Vùng chứa Flexbox với 5 Item:</h2>
+        <div class="flex-container">
+            <div>Item 1</div>
+            <div class="item-grow">Item 2 (flex-grow: 1)</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+            <div>Item 5</div>
+        </div>
+    </div>
+
+</body>
+</html>
